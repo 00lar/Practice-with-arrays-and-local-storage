@@ -1,12 +1,33 @@
 import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [Counter,setCounter] = useState(0);
+
+  const Add = () => {
+    setCounter(Counter+1);
+  }
+
+  const Substract = () => {
+    setCounter(Counter-1);
+  }
+
+  const Reset = () => {
+    setCounter(0);
+  }
+
   return (
     <div className="App">
-    <h1 className="text-3xl font-bold underline text-green-600">
-      Hello world!
-    </h1>
+    <p>{Counter}</p>
+      <button
+      onClick={Add}>+</button>
+      <button
+      onClick={Substract}
+      >-</button>
+      <button
+      onClick={Reset}>Reset</button>
     </div>
   );
 }
